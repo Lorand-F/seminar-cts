@@ -5,6 +5,7 @@ import java.util.List;
 
 import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
+import ro.ase.cts.clase.Student;
 import ro.ase.cts.clase.UniversalReader;
 import ro.ase.cts.clase.readers.EmployeeReader;
 import ro.ase.cts.clase.readers.PupilReader;
@@ -19,10 +20,14 @@ public class Program {
 
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicanti;
+		System.out.println("Suma finantata Student: "+Student.getSumaFinantata());
+		System.out.println("Suma finantata Angajat: "+Angajat.getSumaFinantata());
 		try {
-			listaAplicanti = UniversalReader.readAplicants(new StudentReader("studenti.txt"));	
-			for(Aplicant aplicant:listaAplicanti)
+			listaAplicanti = UniversalReader.readAplicants(new EmployeeReader("angajati.txt"));	
+			for(Aplicant aplicant:listaAplicanti) {
 				System.out.println(aplicant.toString());
+				aplicant.afiseazaSumaFinantare();
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

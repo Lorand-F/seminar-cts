@@ -34,4 +34,6 @@ public abstract class Reader {
 		aplicant.setDenumiriProiecte(nr, vect);		
 	}
 	
+	
+	
 }
